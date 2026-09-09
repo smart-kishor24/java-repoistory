@@ -247,7 +247,7 @@ public class kishor {
         System.out.println(q.dequeue()); 
         System.out.println(q.dequeue()); 
     }
-}*/
+}
 package Day3;
 
 public class kishor {
@@ -291,4 +291,32 @@ public class kishor {
 	         System.out.println(q.dequeue()); 
 	         System.out.println(q.dequeue()); 
 	     }
-	     }
+}*/
+
+
+
+package Day3;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+public class kishor {
+	static void reverse(Queue<Integer> queue) {
+		Stack<Integer> stack = new Stack<>();
+		while(!queue.isEmpty()) {
+			stack.push(queue.remove());
+		}
+		while(!stack.isEmpty()) {
+			queue.add(stack.pop());
+		}
+	}
+	public static void main(String[] args) {
+		Queue<Integer> queue = new LinkedList<>();
+		queue.add(10);
+		queue.add(20);
+		queue.add(30);
+		queue.add(40);
+		reverse(queue);
+		System.out.println(queue);
+	}
+
+}
