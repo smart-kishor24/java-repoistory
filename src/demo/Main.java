@@ -193,7 +193,7 @@ public class Main {
 			
 		}
 	}
-}*/
+}
 
 package demo;
 public class Main {
@@ -234,7 +234,7 @@ public class Main {
             System.out.println("Element " + target + " not found");
         }
     }
-}
+}*/
 
 
 
