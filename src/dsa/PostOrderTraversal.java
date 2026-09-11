@@ -1,5 +1,5 @@
 package dsa;
-public class Inorder {
+public class PostOrderTraversal {
 	static class Node{
 		int data;
 		Node left;
@@ -8,13 +8,13 @@ public class Inorder {
 			this.data = data;
 		}
 	}
-	static void inorder(Node root) {
+	static void postorder(Node root) {
 		if(root == null) {
 			return;
 		}
-		inorder(root.left);
+		postorder(root.left);
 		System.out.print(root.data + " ");
-		inorder(root.right);
+		postorder(root.right);
 	}
 	public static void main(String[] args) {
 		Node root = new Node(50);
@@ -25,8 +25,8 @@ public class Inorder {
 		root.left.right.left = new Node(35);
 		root.right.left = new Node(60);
 		root.right.right = new Node(80);
-		System.out.println("Inorder Traversal");
-		inorder(root);
+		System.out.println("Postorder Traversal");
+		postorder(root);
 	}
 	
 }

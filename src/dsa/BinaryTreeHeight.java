@@ -1,5 +1,6 @@
 package dsa;
-public class Inorder {
+
+public class BinaryTreeHeight {
 	static class Node{
 		int data;
 		Node left;
@@ -8,25 +9,23 @@ public class Inorder {
 			this.data = data;
 		}
 	}
-	static void inorder(Node root) {
+	static int height(Node root) {
 		if(root == null) {
-			return;
+			return -1;
 		}
-		inorder(root.left);
-		System.out.print(root.data + " ");
-		inorder(root.right);
+		int leftHeight = height(root.left);
+		int rightHeight = height(root.right);
+		return 1 + Math.max(leftHeight, rightHeight);
 	}
 	public static void main(String[] args) {
 		Node root = new Node(50);
 		root.left = new Node(30);
-		root.right = new Node(70);
+		root.right = new Node(70);;
 		root.left.left = new Node(20);
 		root.left.right = new Node(40);
 		root.left.right.left = new Node(35);
 		root.right.left = new Node(60);
 		root.right.right = new Node(80);
-		System.out.println("Inorder Traversal");
-		inorder(root);
+		System.out.println("Height of Binary Tree: " + height(root));
 	}
-	
 }
